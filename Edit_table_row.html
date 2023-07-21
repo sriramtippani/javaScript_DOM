@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Form</title>
+</head>
+<body>
+    <h1>Table Created for insert rows by using Javascript</h1><hr><br><br>
+    <table border="1" id="a">
+        <thead>
+            <th>Value1</th>
+            <th>Value2</th>
+        </thead>
+        <tr>
+            <td>Row1 cell1</td>
+            <td>Row1 cell2</td>
+        </tr>
+        <!-- <tr>
+            <td>Row2 cell1</td>
+            <td>Row2 cell2</td>
+        </tr> -->
+    </table><br>
+    <input type="submit" onclick="f1()" value="insert_row">
+
+    <script>
+        function f1()
+        {
+            var a = document.getElementById('a').insertRow(2);
+            var y = a.insertCell(0);
+            var m = a.insertCell(1);
+            y.innerHTML = prompt('Enter row-1');
+            m.innerHTML = prompt('Enter row-2');
+        }
+    </script>
+</body>
+</html>

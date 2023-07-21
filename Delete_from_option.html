@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=l, initial-scale=1.0">
+    <title>Page Delete</title>
+</head>
+<body>
+    <h1>Javascript object for option</h1>
+    <select name="" id="one">
+        <option value="">micro</option>
+        <option value="">nano</option>
+        <option value="">pico</option>
+        <option value="">desi</option>
+        <option value="">centi</option>
+        <option value="">milli</option>
+    </select><br><br>
+    <input type="submit" onclick="f2()" value="Select to Delete Item">
+
+    <script>
+        var n1 = document.getElementById('one');
+        function f2()
+        {
+            n1.remove(n1.selectedIndex);
+        }
+    </script>
+</body>
+</html>

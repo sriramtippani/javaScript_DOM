@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculation</title>
+</head>
+<body>
+    <h1>Calculate the vaolue of the sphere</h1><hr><br><br>
+    <form method="POST" id="info">
+        <label for="a">Radius: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        <input type="text" name="radius" id="a" required><br><br>
+        <label for="b">Result of the sphere: </label>
+        <input type="text" name="radius" id="b"><br><br>
+
+        <input type="submit" value="Calculate">
+    </form>
+
+    <script>
+        function any_fun()
+        {
+            var final_output;
+            
+            var radius_no = document.getElementById('a').value;
+            radius = Math.abs(radius_no);
+            result = (4 / 3) * Math.PI * Math.pow(radius, 3);
+            final_output = result.toFixed(4);
+
+            document.getElementById('b').value = final_output;
+
+            return false;
+
+        }
+        window.onload = document.getElementById('info').onsubmit = any_fun;
+    </script>
+</body>
+</html>

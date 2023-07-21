@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card-deck text-center">
+            <div id="pro-plan" class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <h3 class="my-0 font-weight-normal">Pro</h3>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title pricing-card-title">$<span class="pricing">30 / month</span></h4>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>100 users included</li>
+                        <li><span class="storage-amount">20</span> GB of storage</li>
+                        <li>Priority email support</li>
+                        <li>Help center access</li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-outline-primary">Get Started</button>
+                </div>
+            </div>
+            <div id="basic-plan" class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <h3 class="my-0 font-weight-normal">Basic</h3>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title pricing-card-title">$<span class="pricing">10 / month</span></h4>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>10 users included</li>
+                        <li><span class="storage-amount">2</span> GB of storage</li>
+                        <li>Email support</li>
+                        <li>Help center access</li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-outline-primary">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        /* 
+  Exercise 01
+  -----------
+  A new feature has been added to the Pro plan: '24/7 Phone support'.
+  Add this using JavaScript to the list features of the Pro plan.
+*/
+document.querySelector('#pro-plan ul').insertAdjacentHTML('beforeEnd', '<li>24/7 phone call support.</li>');
+
+/* 
+  Exercise 02
+  -----------
+  To make the ordering of the plans more logical, 
+  using JavaScript, move the basic plan to be before (to the left) of the pro plan.
+*/
+document.querySelector('.card-deck').style['flex-direction'] = 'row-reverse';
+
+/* 
+  Exercise 03
+  -----------
+  To make the Pro plan have a stronger call to action, 
+  update the current 'Get started' button to be blue (#007bff) 
+  with white text and have the text 'Buy Now' 
+*/
+const proBtn = document.querySelector('#pro-plan button');
+proBtn.style.backgroundColor = '#007bff';
+proBtn.style.color = 'white';
+proBtn.innerText = 'Buy Now';
+
+/* 
+  Exercise 04
+  -----------
+  There is a special offer on at the moment offering 50% more storage on the Basic 
+  plan and 25% more on the Pro plan. Update the basic and pro plan cards to reflect 
+  the new storage amount being offered. 
+*/
+const basicPlan = document.querySelector('#basic-plan .storage-amount');
+const proPlan = document.querySelector('#pro-plan .storage-amount');
+basicPlan.innerText = basicPlan.innerText * 1.5;
+proPlan.innerText = proPlan.innerText * 1.25;
+
+/* 
+  Exercise 05
+  -----------
+  You have been asked to add ask a toggle / radio box for annual and monthly payments for the basic and pro plans.
+  Add a radio button to toggle between monthly and annual payment options and adjust the prices shown for both plans if the annual option is selected (give two months free if customers pay annually).
+*/
+document.querySelector('.container').insertAdjacentHTML('afterBegin', `<label>Montly
+    <input type="radio" name="pricing" id="monthlyPricing" value="monthly" checked>
+</label><br>
+<label>Annual
+    <input type="radio" name="pricing" id="annualPricing" value="annual">
+</label>`);
+
+const pricing = {
+                    monthly:{
+                                basic: '10 / month',
+                                pro: '30 / month',
+                            },
+                    annual:{
+                                basic: '100 / year',
+                                pro: '300 / year',
+                            }
+                };
+
+const changePricing = (event) => {
+    const selection = event.target.value;
+    document.querySelector('#basic-plan .pricing').innerText = pricing[selection].basic;
+    document.querySelector('#pro-plan .pricing').innerText = pricing[selection].pro;
+}
+
+Array.from(document.querySelectorAll('input[type="radio"]'))
+.forEach(radio => radio.addEventListener('change', changePricing));
+    </script>
+</body>
+</html>

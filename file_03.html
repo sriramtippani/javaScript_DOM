@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript backgroud</title>
+</head>
+<body>
+    <h1>Javascript background style concept by using button</h1>
+    <p id="ab">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod culpa totam vero molestiae, voluptatem unde omnis itaque veritatis voluptatum, dolores nihil nisi quia, molestias commodi autem rerum ullam doloribus ad.</p>
+    <p id="cd">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero sint dolorum voluptates dignissimos, officia fuga delectus officiis quibusdam modi similique quis minima autem excepturi magni aut assumenda illum cupiditate inventore.</p>
+    <input type="submit" value="Click to change color" onclick="color()"><br><br>
+
+    <a id="first" href="http://www.amazon.com" type="text/html" hreflang="en-us" rel="nofollow" target="_blank">Click Here</a><br><br>
+    <input type="submit" value="Click To get attributes" onclick="Atrib()"><br><br>
+
+    <script>
+        var ab = document.getElementById('ab');
+        var cd = document.getElementById('cd');
+
+        function color() 
+        {
+            ab.style.backgroundColor = 'green';
+            ab.style.color = 'white';
+            cd.style.backgroundColor = 'blue';
+            cd.style.color = 'white';
+        }
+
+        var a = document.getElementById('first').type;
+        var b = document.getElementById('first').hreflang;
+        var c = document.getElementById('first').rel;
+        var d = document.getElementById('first').target;
+        var e = document.getElementById('first').href;
+
+        function Atrib() 
+        {
+            alert('The value of the type attribute of the link is : ' + a);
+            alert('The value of the hreflang attribute of the link is : ' + b);
+            alert('The value of the rel attribute of the link is : ' + c);
+            alert('The value of the taget attribute of the link is : ' + d);
+            alert('The value of the href attribute of the link is : ' + e);
+        }
+    </script>
+</body>
+</html>

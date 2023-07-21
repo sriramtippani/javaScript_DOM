@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window resize</title>
+</head>
+<body onload="getwindow()" onresize="getsize()">
+    <div id="size">
+
+    </div>
+<script>
+    function getwindow()
+    {
+        var h = document.documentElement.clientWidth;
+        var w = document.documentElement.clientHeight;
+        document.getElementById('size').innerHTML = "<h1>Width: " + w + " â€¢ Height: " + h + "</h1>";
+    }
+</script>
+
+</body>
+</html>

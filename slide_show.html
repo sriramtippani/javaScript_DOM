@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parent{
+            width: 500px;
+            margin: 20px auto;
+            border-radius: 20px;
+            box-shadow: 0 0 10px black;
+            position: relative;
+            overflow: hidden;
+        }
+        #parent> img{
+            width: 500px;
+            border-radius:20px ;
+            height: 300px;
+            margin: auto;
+        }
+        #wrapper-1,#wrapper-2,#wrapper-3,#wrapper-4{
+
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 500px;
+            height: 300px;
+            border-radius: inherit;
+            overflow: hidden;
+        }
+        #wrapper-1{
+            background-color: blue;
+            transition:all 1s linear 6s ;
+        }
+        #wrapper-2{
+            background-color:red;
+            transition:all 1s linear 4s ;
+        }
+        #wrapper-3{
+            background-color: green;
+            transition:all 1s linear 2s ;
+        }
+        #wrapper-4{
+            background-color: yellow;
+            transition:all 1s linear 0s ;
+        }
+        #wrapper-1:hover{
+            cursor: pointer;
+            transform: translateX(100%);
+        }
+        #wrapper-2:hover{
+            cursor: pointer;
+            transform: translateX(-100%);
+        }
+        #wrapper-3:hover{
+            cursor: pointer;
+            transform: translateY(100%);
+        }
+        #wrapper-4:hover{
+            cursor: pointer;
+            transform: translateY(-100%);
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <img src="data:image/jpeg;base64,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" alt="">
+        <div id="wrapper-1">
+            <div id="wrapper-2">
+                <div id="wrapper-3">
+                    <div id="wrapper-4">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>
